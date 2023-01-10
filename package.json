@@ -1,0 +1,14 @@
+{
+  "name": "installing-and-running-jest",
+  "version": "0.0.1",
+
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.3.1",
+    "jest": "^29.3.1"
+  }
+}
