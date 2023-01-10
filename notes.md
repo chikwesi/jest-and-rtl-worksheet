@@ -43,12 +43,12 @@ vscode debugger
 - install typescript
 : `npm install --save-dev typescript`
 
-add tsconfig.json at root
+- add tsconfig.json at root
 
-Configure Babel
+- Configure Babel
 : `npm install --save-dev @babel/preset-typescript`
 
-update babel.config.js
+- update babel.config.js
 
 ```js
 module.exports = {
@@ -61,3 +61,13 @@ module.exports = {
 ### Add Jest types
 
 `npm install --save-dev @types/jest`
+
+## Using Matchers
+
+Jest `expect` function returns an object of different matching functions that we use to define expectations for testing results.
+
+> A matcher is a function that allows us to check a test result
+
+Matchers can be extended
+- jest-extended
+- test-library/jest-dom (DOM related matchees)
