@@ -71,3 +71,8 @@ Jest `expect` function returns an object of different matching functions that we
 Matchers can be extended
 - jest-extended
 - test-library/jest-dom (DOM related matchees)
+
+### Checking for null and undefined
+- `expect().tobeNull()` varifies null
+- `expect().tobeUndefined()` tests undefined
+- `expect().not.[matcher]` property tests opposit of any matcher that follows
