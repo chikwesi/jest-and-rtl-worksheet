@@ -21,10 +21,9 @@ coverage
 ### Naming
 
 Group tests with describe
-```js
-describe("[group name]", () => {
 
-})
+```js
+describe('[group name]', () => {})
 ```
 
 ---
@@ -41,12 +40,12 @@ vscode debugger
 ### Configuring typescript
 
 - install typescript
-: `npm install --save-dev typescript`
+  : `npm install --save-dev typescript`
 
 - add tsconfig.json at root
 
 - Configure Babel
-: `npm install --save-dev @babel/preset-typescript`
+  : `npm install --save-dev @babel/preset-typescript`
 
 - update babel.config.js
 
@@ -58,6 +57,7 @@ module.exports = {
   ],
 };
 ```
+
 ### Add Jest types
 
 `npm install --save-dev @types/jest`
@@ -69,10 +69,40 @@ Jest `expect` function returns an object of different matching functions that we
 > A matcher is a function that allows us to check a test result
 
 Matchers can be extended
+
 - jest-extended
 - test-library/jest-dom (DOM related matchees)
 
 ### Checking for null and undefined
+
 - `expect().tobeNull()` varifies null
 - `expect().tobeUndefined()` tests undefined
 - `expect().not.[matcher]` property tests opposit of any matcher that follows
+
+---
+
+### Checking for equality
+
+- toStrictEqual: Matches the structure of the object and the properties
+```js
+expect(result).toStrictEqual({
+  id: 1,
+  name: 'john',
+})
+```
+
+- toEqual: Useful to ignore properties whose values are undefined
+```js
+expect(result).toEqual({
+  id: 1,
+  name: 'john',
+  value: undefined,
+})
+```
+- toMatchObject: Useful to test only certain properties within an object
+
+```js
+expect(result).toMatchObject({
+  name: 'john'
+})
+```
