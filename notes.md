@@ -124,14 +124,14 @@ expect(result).toMatchObject({
   sparseness is checked
 
 ```js
-;[, 'john'] != [undefined, 'john']
+[, 'john'] != [undefined, 'john']
 ```
 
 - `expect().toEqual()`
   sparseness is not checked
 
 ```js
-;[, 'john'] == [undefined, 'john']
+[, 'john'] == [undefined, 'john']
 ```
 
 - `expect().toConatain`
@@ -139,3 +139,31 @@ expect(result).toMatchObject({
 
 - `expect().toContainEqual`
   To Check that a object is contained in a array
+
+### Checking Exceptions
+
+- toThrow()
+
+```js
+expect(() => {
+  action()
+}).toThrow()
+```
+
+
+- `expect().toThrow(Error)`
+  To check the exception is of error class
+
+- `expect().toThrow("Not found")`
+  To check the exception message matches the string
+
+- `expect().toThrow(/not found/i)`
+  To check the
+
+- Asynchronous functions: The promise needs to rejected. Use the `.rejects` property.
+
+```js
+expect(async () => {
+  await action()
+}).rejects.toThrow()
+```
