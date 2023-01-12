@@ -106,3 +106,10 @@ expect(result).toMatchObject({
   name: 'john'
 })
 ```
+
+### Checking Strings
+- `expect().tobe()` to do a strict string comparison.
+- `expect().toContain()`
+to do a case sensitive partial comparison
+- `expect().toMatch()`
+to Match a regular expression comparison
