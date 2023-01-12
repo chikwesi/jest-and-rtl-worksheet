@@ -84,6 +84,7 @@ Matchers can be extended
 ### Checking for equality
 
 - toStrictEqual: Matches the structure of the object and the properties
+
 ```js
 expect(result).toStrictEqual({
   id: 1,
@@ -92,6 +93,7 @@ expect(result).toStrictEqual({
 ```
 
 - toEqual: Useful to ignore properties whose values are undefined
+
 ```js
 expect(result).toEqual({
   id: 1,
@@ -99,17 +101,41 @@ expect(result).toEqual({
   value: undefined,
 })
 ```
+
 - toMatchObject: Useful to test only certain properties within an object
 
 ```js
 expect(result).toMatchObject({
-  name: 'john'
+  name: 'john',
 })
 ```
 
 ### Checking Strings
+
 - `expect().tobe()` to do a strict string comparison.
 - `expect().toContain()`
-to do a case sensitive partial comparison
+  to do a case sensitive partial comparison
 - `expect().toMatch()`
-to Match a regular expression comparison
+  to Match a regular expression comparison
+
+### Checking Arrays
+
+- `expect().toStrictEqual()`
+  sparseness is checked
+
+```js
+;[, 'john'] != [undefined, 'john']
+```
+
+- `expect().toEqual()`
+  sparseness is not checked
+
+```js
+;[, 'john'] == [undefined, 'john']
+```
+
+- `expect().toConatain`
+  To check that a primitive value is contained in an array
+
+- `expect().toContainEqual`
+  To Check that a object is contained in a array
