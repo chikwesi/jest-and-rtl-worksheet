@@ -167,3 +167,18 @@ expect(async () => {
   await action()
 }).rejects.toThrow()
 ```
+### Using Snapshots
+
+`expect().toMatchSnapshot()`
+
+A snapshot defines and stores the result of a test the first time it is executed. On subsequent test execution, if the result is different from the baseline snapshot the tests fails.
+
+>They are useful in testing arrays and objects.
+
+
+
+Running jest creates a *__ __snapshots__ __* folder whic contains the snapshot file.
+
+Use the `-u` or `-updateSnapshot` flag to update snapshot
+
+`npm t -- -u`
